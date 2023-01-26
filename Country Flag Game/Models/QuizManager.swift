@@ -19,8 +19,6 @@ class QuizManager: ObservableObject {
     @Published private(set) var score = 0
     
     init() {
-        func reset() {
-        }
         
         questions = questions.shuffled()
         index = 0
@@ -30,6 +28,9 @@ class QuizManager: ObservableObject {
         goToNextQuestion()
     }
     
+    func reset() {
+    }
+
     
     func goToNextQuestion() {
         if index < questions.count {
